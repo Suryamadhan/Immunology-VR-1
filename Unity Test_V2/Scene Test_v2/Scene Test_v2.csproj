@@ -108,6 +108,11 @@
     <Compile Include="Assets\OutlineEffect\LinkedSet.cs" />
     <Compile Include="Assets\OutlineEffect\Outline.cs" />
     <Compile Include="Assets\OutlineEffect\OutlineEffect.cs" />
+    <Compile Include="Assets\Portals\LowPolyPortalPack\Scripts\TBS_CameraMovement.cs" />
+    <Compile Include="Assets\Portals\LowPolyPortalPack\Scripts\TBS_RotateableObject.cs" />
+    <Compile Include="Assets\Portals\LowPolyPortalPack\Scripts\TBS_TextureAnimator.cs" />
+    <Compile Include="Assets\Portals\LowPolyPortalPack\Scripts\TBS_WispBehaviour.cs" />
+    <Compile Include="Assets\Portals\LowPolyPortalPack\Scripts\TBS_WispsManager.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -491,11 +496,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-    <Compile Include="Assets\TornadoBanditsStudio\LowPolyPortalPack\Scripts\TBS_CameraMovement.cs" />
-    <Compile Include="Assets\TornadoBanditsStudio\LowPolyPortalPack\Scripts\TBS_RotateableObject.cs" />
-    <Compile Include="Assets\TornadoBanditsStudio\LowPolyPortalPack\Scripts\TBS_TextureAnimator.cs" />
-    <Compile Include="Assets\TornadoBanditsStudio\LowPolyPortalPack\Scripts\TBS_WispBehaviour.cs" />
-    <Compile Include="Assets\TornadoBanditsStudio\LowPolyPortalPack\Scripts\TBS_WispsManager.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\Scripts\Archery\Arrow.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\Scripts\Archery\ArrowNotch.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\Scripts\Archery\ArrowSpawner.cs" />
@@ -766,6 +766,7 @@
     <None Include="Assets\GoogleVR\Shaders\GvrUnlitTransparentOverlay.shader" />
     <None Include="Assets\GoogleVR\Shaders\GvrUnlitTransparentOverlayColor.shader" />
     <None Include="Assets\GoogleVR\Shaders\Video\VideoUnlitShader.shader" />
+    <None Include="Assets\Hologram shader\Sci-fi Hologram Shader\Shaders\SciFiHologramShader.shader" />
     <None Include="Assets\OutlineEffect\Resources\OutlineBufferShader.shader" />
     <None Include="Assets\OutlineEffect\Resources\OutlineShader.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
@@ -937,7 +938,6 @@
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\UIOverlay.shader" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\Unlit_TransparentColor.shader" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\VRTK_OutlineBasic.shader" />
-    <None Include="Assets\Zololgo\Sci-fi Hologram Shader\Shaders\SciFiHologramShader.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

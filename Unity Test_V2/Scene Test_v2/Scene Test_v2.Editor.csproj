@@ -168,6 +168,8 @@
     <Compile Include="Assets\Editor\ImageEffects\TonemappingEditor.cs" />
     <Compile Include="Assets\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
     <Compile Include="Assets\Editor\Instant Screenshot\ScreenshotTaker.cs" />
+    <Compile Include="Assets\Hologram shader\Sci-fi Hologram Shader\Scripts\Editor\SciFiHologramShaderGUI.cs" />
+    <Compile Include="Assets\Portals\Editor\TBS_PresentationWindow.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\AntialiasingModelEditor.cs" />
@@ -217,7 +219,6 @@
     <Compile Include="Assets\SWS\Scripts\Editor\ReviewWindowEditor.cs" />
     <Compile Include="Assets\SWS\Scripts\Editor\splineMoveEditor.cs" />
     <Compile Include="Assets\SWS\Scripts\Editor\WaypointEditor.cs" />
-    <Compile Include="Assets\TornadoBanditsStudio\Editor\TBS_PresentationWindow.cs" />
     <Compile Include="Assets\VRTK\Editor\VRTK_AdaptiveQualityEditor.cs" />
     <Compile Include="Assets\VRTK\Editor\VRTK_EditorUtilities.cs" />
     <Compile Include="Assets\VRTK\Editor\VRTK_InteractHapticsEditor.cs" />
@@ -228,7 +229,6 @@
     <Compile Include="Assets\VRTK\Editor\VRTK_SDKSetupEditor.cs" />
     <Compile Include="Assets\VRTK\Editor\VRTK_SupportInfoWindow.cs" />
     <Compile Include="Assets\VRTK\Editor\VRTK_UpdatePrompt.cs" />
-    <Compile Include="Assets\Zololgo\Sci-fi Hologram Shader\Scripts\Editor\SciFiHologramShaderGUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Colr\Shaders\GradientSkybox.shader" />
@@ -245,6 +245,7 @@
     <None Include="Assets\GoogleVR\Shaders\GvrUnlitTransparentOverlay.shader" />
     <None Include="Assets\GoogleVR\Shaders\GvrUnlitTransparentOverlayColor.shader" />
     <None Include="Assets\GoogleVR\Shaders\Video\VideoUnlitShader.shader" />
+    <None Include="Assets\Hologram shader\Sci-fi Hologram Shader\Shaders\SciFiHologramShader.shader" />
     <None Include="Assets\OutlineEffect\Resources\OutlineBufferShader.shader" />
     <None Include="Assets\OutlineEffect\Resources\OutlineShader.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
@@ -416,7 +417,6 @@
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\UIOverlay.shader" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\Unlit_TransparentColor.shader" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\VRTK_OutlineBasic.shader" />
-    <None Include="Assets\Zololgo\Sci-fi Hologram Shader\Shaders\SciFiHologramShader.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
