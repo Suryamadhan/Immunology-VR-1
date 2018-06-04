@@ -15,6 +15,7 @@ public class AudioManagerS2 : MonoBehaviour {
     ParticleCollision pcolScript;
     public float timer = 120f;
     bool isTimerStart;
+    public TextMeshPro header;
     public TextMeshPro missionDoneText;
     public TextMeshPro exitText;
     public TextMeshPro deathText;
@@ -137,8 +138,12 @@ public class AudioManagerS2 : MonoBehaviour {
             guideAudioS2.PlayOneShot(audioClips[7], 1f);
             missionDoneText.color = Color.green;
             missionDoneText.text = "Congrats, your mission has accomplished!";
+            header.text = "";
             StartCoroutine("FadeScreen");
-            
+            if (!isC5Played)
+            {
+                isC5Played = true;
+            }
         } 
 
         if(destrucScript.m_leftTime < 0 && !playerDied || healthScript.healthCombined == 0 && !playerDied)

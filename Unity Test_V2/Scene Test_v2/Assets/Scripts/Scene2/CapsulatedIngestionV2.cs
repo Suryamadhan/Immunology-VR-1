@@ -33,8 +33,9 @@ public class CapsulatedIngestionV2 : MonoBehaviour
 
     public GameObject scoreTextPrefab;
 
-    public GameObject textMeshInvalidIngest;
-    private TextMeshPro invalidIngestWarning;
+    //public GameObject textMeshInvalidIngest;
+    public TextMeshPro invalidIngestWarning;
+    public TextMeshPro header;
 
     private GameObject target;
     private float ingestDist;
@@ -73,7 +74,7 @@ public class CapsulatedIngestionV2 : MonoBehaviour
 
         rotateScript = pivot.GetComponent<RotateWithStops>();
 
-        invalidIngestWarning = textMeshInvalidIngest.GetComponent<TextMeshPro>();
+        //invalidIngestWarning = textMeshInvalidIngest.GetComponent<TextMeshPro>();
 
         tempEnd = endPoint;
 
@@ -130,16 +131,15 @@ public class CapsulatedIngestionV2 : MonoBehaviour
                 if ((hit.collider.tag == "Bacteria Sausage" && !isWrongTarget)|| (hit.collider.tag == "Bacteria Bighead" && !isWrongTarget))
                 {
                     isWrongTarget = true;
-                    invalidIngestWarning.color = Color.red;
-                    invalidIngestWarning.text = "Enemy is too big to be ingested!";
-                    isEnemyTooBig = true; //turn on warning audio
-                    errorBeep.PlayOneShot(error, 1f);
 
+                    StartCoroutine(WrongTargetWarning());
                 }
                 else
                 {
-                    invalidIngestWarning.color = new Color32(255, 78, 0, 255);
+                    invalidIngestWarning.color = new Color32(255, 255, 255, 255);
                     invalidIngestWarning.text = "Phagocytosis in action!";
+                    header.color = new Color32(255, 78, 0, 255);
+                    header.text = "[status]";
                     isWrongTarget = false;
                 }
 
@@ -170,7 +170,6 @@ public class CapsulatedIngestionV2 : MonoBehaviour
 
         if(startIngestion)
         {
-            
             //calculate distance between bacteria and an anchor point in player
             if (target != null)
             {
@@ -265,11 +264,8 @@ public class CapsulatedIngestionV2 : MonoBehaviour
 
                 
                 ScoreManager.score += 50;
-               
-
 
             }
-
 
         }
         
@@ -281,7 +277,22 @@ public class CapsulatedIngestionV2 : MonoBehaviour
             enzymeParticles1.Stop();
         }
 
+    }
 
 
+    IEnumerator WrongTargetWarning()
+    {
+        header.color = Color.red;
+        header.text = "[warning]";
+        invalidIngestWarning.color = Color.red;
+        invalidIngestWarning.text = "Enemy is too big to be ingested!";
+        isEnemyTooBig = true; //turn on warning audio
+        errorBeep.PlayOneShot(error, 1f);
+
+        yield return new WaitForSeconds(2f);
+        invalidIngestWarning.color = new Color32(255, 255, 255, 255);
+        invalidIngestWarning.text = "Phagocytosis in action!";
+        header.color = new Color32(255, 78, 0, 255);
+        header.text = "[status]";
     }
 }

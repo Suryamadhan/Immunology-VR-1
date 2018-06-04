@@ -21,9 +21,10 @@ public class Teleportation : MonoBehaviour {
     public GameObject selfDestructionTimer;
     private TimerCountdown gameTimerScript;
     
-    public GameObject tmproDisplay;
-    private TextMeshPro resetText;
+    //public GameObject tmproDisplay;
+    public TextMeshPro resetText;
     private Color32 resetTextColor = new Color32(2, 189, 251, 255);
+    public TextMeshPro header;
 
     //private NETSv1 netsV1Script;
 
@@ -34,7 +35,7 @@ public class Teleportation : MonoBehaviour {
     void Awake()
     {
 
-        resetText = tmproDisplay.GetComponent<TextMeshPro>();
+        //resetText = tmproDisplay.GetComponent<TextMeshPro>();
         gameTimerScript = gameTimer.GetComponentInChildren<TimerCountdown>();
         //netsV1Script = GetComponent<NETSv1>();
     }
@@ -85,26 +86,7 @@ public class Teleportation : MonoBehaviour {
     }
 
 
-    // Update is called once per frame
-    /*    void Update () {
-
-
-
-            if (device.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad) && !isTeleported && teleportTarget != null)
-            {
-                newNeutrophilBody = Instantiate(neutrophilCockpitPrefab, player.transform.position, player.transform.rotation);
-
-                Teleport();
-
-                DisplayInfoReset();
-
-                //netsV1Script.isReseting = true;
-
-                //netsV1Script.enabled = false;
-            }
-        }
-    */
-
+    
     IEnumerator Teleport()
     {
         //teleportTarget.SetActive(false);
@@ -128,10 +110,20 @@ public class Teleportation : MonoBehaviour {
     private void DisplayInfoReset()
     {
         resetText.text = "Teleporation to another neutrophil success!";
-        resetText.color = resetTextColor;
+        resetText.color = new Color32(255, 255, 255, 255);
+        header.color = resetTextColor;
+        header.text = "[status]";
+        StartCoroutine(TextReset());
 
         gameTimer.SetActive(true);
         selfDestructionTimer.SetActive(false);
         gameTimerScript.m_leftTime = 300f;
+    }
+
+    IEnumerator TextReset()
+    {
+        yield return new WaitForSeconds(5f);
+        resetText.text = "kill pathogens and increase host health to 900";
+        header.text = "[mission]";
     }
 }

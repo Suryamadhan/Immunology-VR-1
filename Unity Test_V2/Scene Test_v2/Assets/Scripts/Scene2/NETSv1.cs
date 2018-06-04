@@ -26,11 +26,14 @@ public class NETSv1 : MonoBehaviour
     private Vector3 originalScale;
     //public bool isReseting;
 
-    public GameObject textMeshAbandonShip;
-    private TextMeshPro abandonShipText;
+    //public GameObject textMeshAbandonShip;
+    public TextMeshPro abandonShipText;
+    public TextMeshPro header;
 
     private Teleportation teleportScript;
     private SelfDestructionCountdown selfDestructScript;
+
+    public MagicMoveV4 magicMoveV4;
 
     //vive controller tracking and input
     public SteamVR_TrackedObject controller;
@@ -45,7 +48,7 @@ public class NETSv1 : MonoBehaviour
         controller = GetComponent<SteamVR_TrackedObject>();
         //originalScale = dnaChain1.transform.localScale;
 
-        abandonShipText = textMeshAbandonShip.GetComponent<TextMeshPro>();
+        //abandonShipText = textMeshAbandonShip.GetComponent<TextMeshPro>();
 
 
         teleportScript = GetComponent<Teleportation>();
@@ -90,11 +93,12 @@ public class NETSv1 : MonoBehaviour
 
             abandonShipText.text = "Abandon neutrophil body now!";
             abandonShipText.color = Color.red;
+            header.color = Color.red;
+            header.text = "[Alert]";
 
             teleportScript.enabled = true;
+            magicMoveV4.speed = 0f;
         }
-
-
 
     }
 
@@ -103,7 +107,7 @@ public class NETSv1 : MonoBehaviour
     {
         dnaChainTemp1.transform.parent = null;
         dnaChain1a = dnaChainTemp1;
-        dnaChain1a.transform.position = new Vector3 (teleportScript.newNeutrophilBody.transform.position.x - 2f, teleportScript.newNeutrophilBody.transform.position.y, teleportScript.newNeutrophilBody.transform.position.z);
+        dnaChain1a.transform.position = new Vector3 (teleportScript.newNeutrophilBody.transform.position.x - 1f, teleportScript.newNeutrophilBody.transform.position.y, teleportScript.newNeutrophilBody.transform.position.z);
         dnaChain1a.transform.rotation = teleportScript.newNeutrophilBody.transform.rotation;
 
         dnaChainTemp1 = dnaChain1b;
@@ -111,7 +115,7 @@ public class NETSv1 : MonoBehaviour
 
         dnaChainTemp2.transform.parent = null;
         dnaChain2a = dnaChainTemp2;
-        dnaChain2a.transform.position = new Vector3 (teleportScript.newNeutrophilBody.transform.position.x + 2f, teleportScript.newNeutrophilBody.transform.position.y, teleportScript.newNeutrophilBody.transform.position.z);
+        dnaChain2a.transform.position = new Vector3 (teleportScript.newNeutrophilBody.transform.position.x + 1f, teleportScript.newNeutrophilBody.transform.position.y, teleportScript.newNeutrophilBody.transform.position.z);
         dnaChain2a.transform.rotation = teleportScript.newNeutrophilBody.transform.rotation;
 
         dnaChainTemp2 = dnaChain2b;
@@ -123,6 +127,6 @@ public class NETSv1 : MonoBehaviour
 
         selfDestructScript.m_leftTime = 60f;
 
-
+        magicMoveV4.speed = 0.2f;
     }
 }

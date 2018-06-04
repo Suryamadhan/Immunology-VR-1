@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class AudioTrigger06 : MonoBehaviour {
 
     public bool playAudio06;
-    public Text text;
+    public TextMeshPro missionText;
   
 
     private void OnTriggerEnter(Collider other)
@@ -17,9 +18,8 @@ public class AudioTrigger06 : MonoBehaviour {
 
             GetComponent<BoxCollider>().isTrigger = false;
 
-            text.text = "[MISSION] Look for transmigration portal";
-            text.horizontalOverflow = HorizontalWrapMode.Wrap;
-
+            missionText.text = "Look for a portal to transmigrate to body tissues";
+            
         }
     }
 }

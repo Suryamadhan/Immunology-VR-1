@@ -22,6 +22,7 @@ public class WeaponShift : MonoBehaviour
 
     //public GameObject displayUI;
     public TextMeshPro weaponText;
+    public TextMeshPro header;
     
 
     public GameObject aimingReticle;
@@ -77,8 +78,8 @@ public class WeaponShift : MonoBehaviour
         rendI.material = mButtonUnlit;
         rendN.material = mButtonUnlit;
 
-        weaponText.text = "Mission: Kill pathogens and increase host health to 900";
-        //weaponText.fontSize = 1f; 
+        weaponText.text = "Kill pathogens and increase host health to 900";
+         
     }
 
     // Update is called once per frame
@@ -135,8 +136,10 @@ public class WeaponShift : MonoBehaviour
             rendI.material = mButtonUnlit;
             rendN.material = mButtonUnlit;
 
-            weaponText.color = new Color32(255, 78, 0, 255);
+            weaponText.color = new Color32(255, 255, 255, 255);
             weaponText.text = "Degranulation Gun Activated!";
+            header.text = "[status]";
+
 
             if (animTeleButton != null)
             {
@@ -162,8 +165,9 @@ public class WeaponShift : MonoBehaviour
             rendP.material = mButtonUnlit;
             rendN.material = mButtonUnlit;
 
-            weaponText.color = new Color32(255, 78, 0, 255);
+            weaponText.color = new Color32(255, 255, 255, 255);
             weaponText.text = "Phagocytosis Reactor Activated!";
+            header.text = "[status]";
 
             if (animTeleButton != null)
             {
@@ -172,9 +176,14 @@ public class WeaponShift : MonoBehaviour
 
         }
 
-        if (other.gameObject.tag == "Ingest Weapon" && !AM2Script.isWeapon2Unlock)
+        if (other.gameObject.tag == "Ingest Weapon" && !AM2Script.isWeapon2Unlock && AM2Script.isWeapon1Unlock)
         {
             StartCoroutine(WeaponLockWarning2());
+        }
+
+        if (other.gameObject.tag == "Ingest Weapon" && !AM2Script.isWeapon1Unlock && !AM2Script.isWeapon2Unlock && !AM2Script.isWeapon3Unlock)
+        {
+            StartCoroutine(WeaponLockWarning());
         }
 
 
@@ -188,8 +197,9 @@ public class WeaponShift : MonoBehaviour
             rendP.material = mButtonUnlit;
             rendI.material = mButtonUnlit;
 
-            weaponText.color = new Color32(255, 78, 0, 255);
+            weaponText.color = new Color32(255, 255, 255, 255);
             weaponText.text = "Neutrophil Extracellular Traps(NETS) Activated!";
+            header.text = "[status]";
 
             if (animTeleButton != null)
             {
@@ -211,18 +221,29 @@ public class WeaponShift : MonoBehaviour
         errorAudio.PlayOneShot(error, 2f);
         weaponText.color = Color.red;
         weaponText.text = "Weapon is locked now. Please wait till it's been introduced.";
+        header.text = "";
+        header.color = Color.red;
 
         yield return new WaitForSeconds(3f);
-        weaponText.color = new Color32(255, 78, 0, 255);
+        weaponText.color = new Color32(255, 255, 255, 255);
+        header.color = new Color32(255, 78, 0, 255);
+
+        if(!isParticle && !isIngest && !isNETS)
+        {
+            weaponText.text = "Kill pathogens and increase host health to 900";
+            header.text = "[mission]";
+        }
 
         if (isParticle)
         {
             weaponText.text = "Degranulation Gun Activated!";
+            header.text = "[status]";
         }
 
         if (isIngest)
         {
             weaponText.text = "Phagocytosis Reactor Activated!";
+            header.text = "[status]";
         }
     }
 
@@ -231,18 +252,29 @@ public class WeaponShift : MonoBehaviour
         errorAudio.PlayOneShot(error, 2f);
         weaponText.color = Color.red;
         weaponText.text = "Please kill 1 bacterium with degranulation to unlock this weapon.";
+        header.text = "";
+        header.color = Color.red;
 
         yield return new WaitForSeconds(3f);
-        weaponText.color = new Color32(255, 78, 0, 255);
+        weaponText.color = new Color32(255, 255, 255, 255);
+        header.color = new Color32(255, 78, 0, 255);
+
+        if (!isParticle && !isIngest && !isNETS)
+        {
+            weaponText.text = "Kill pathogens and increase host health to 900";
+            header.text = "[mission]";
+        }
 
         if (isParticle)
         {
             weaponText.text = "Degranulation Gun Activated!";
+            header.text = "[status]";
         }
 
         if (isIngest)
         {
             weaponText.text = "Phagocytosis Reactor Activated!";
+            header.text = "[status]";
         }
     }
 }

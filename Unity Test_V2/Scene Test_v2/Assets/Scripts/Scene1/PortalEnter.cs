@@ -1,33 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PortalEnter : MonoBehaviour
 {
 
-    public GameObject stepIntoPortalInfo;
+    public TextMeshPro missionText;
 
-
-    private void Awake()
-    {
-        stepIntoPortalInfo.SetActive(false);
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        stepIntoPortalInfo.SetActive(true);
+        missionText.text = "Please enter the Portal to start transmigration.";
 
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        stepIntoPortalInfo.SetActive(true);
-
-    }
+    
 
     private void OnTriggerExit(Collider other)
     {
-        stepIntoPortalInfo.SetActive(false);
+        missionText.text = "Look for a portal to transmigrate to body tissues";
 
     }
 }

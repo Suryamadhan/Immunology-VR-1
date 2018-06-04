@@ -303,7 +303,6 @@
     <Compile Include="Assets\Scripts\Scene2\AnimatedLine.cs" />
     <Compile Include="Assets\Scripts\Scene2\AudioManagerS2.cs" />
     <Compile Include="Assets\Scripts\Scene2\BeamLengthReading.cs" />
-    <Compile Include="Assets\Scripts\Scene2\CapsulatedIngestion.cs" />
     <Compile Include="Assets\Scripts\Scene2\CapsulatedIngestionV2.cs" />
     <Compile Include="Assets\Scripts\Scene2\CollisionDetection.cs" />
     <Compile Include="Assets\Scripts\Scene2\EnemyAItest.cs" />

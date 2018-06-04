@@ -7,25 +7,25 @@ public class EnableBeeping : MonoBehaviour
     public GameObject chemoSensor;
     public Transform chemokine;
     public GameObject sensor;
-    public GameObject getCloserInfo;
-    public GameObject outOfRangeInfo;
+    //public GameObject getCloserInfo;
+    //public GameObject outOfRangeInfo;
     private ChemoSensorAudio chemoAudio;
     private float dist;
-    private PortalEnter portalEnterScript;
-    public GameObject trigger;
+    //private PortalEnter portalEnterScript;
+    //public GameObject trigger;
 
 
     void Awake()
     {
         chemoAudio = chemoSensor.GetComponent<ChemoSensorAudio>();
         chemoAudio.enabled = false;
-        portalEnterScript = trigger.GetComponent<PortalEnter>();
+        //portalEnterScript = trigger.GetComponent<PortalEnter>();
     }
     // Use this for initialization
     void Start()
     {
-        getCloserInfo.SetActive(false);
-        outOfRangeInfo.SetActive(false);
+        //getCloserInfo.SetActive(false);
+        //outOfRangeInfo.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class EnableBeeping : MonoBehaviour
         if (dist <= 250)
         {
             chemoAudio.enabled = true;
-            if (portalEnterScript.stepIntoPortalInfo.activeInHierarchy == false)
+/*            if (portalEnterScript.stepIntoPortalInfo.activeInHierarchy == false)
             {
                 getCloserInfo.SetActive(true);
             }
@@ -45,16 +45,16 @@ public class EnableBeeping : MonoBehaviour
                 getCloserInfo.SetActive(false);
             }
             outOfRangeInfo.SetActive(false);
-
+*/
         }
         else
         {
             chemoAudio.enabled = false;
             chemoAudio.oneBeep.Stop();
-            getCloserInfo.SetActive(false);
-            outOfRangeInfo.SetActive(true);
+//            getCloserInfo.SetActive(false);
+//            outOfRangeInfo.SetActive(true);
         }
-        
+
     }
 
 }
