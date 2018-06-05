@@ -101,7 +101,7 @@ public class CapsulatedIngestionV2 : MonoBehaviour
 
 
             RaycastHit hit;
-            if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, 20f))
+            if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, 35f))
             {
                 Debug.DrawRay(controller.transform.position, controller.transform.forward*20f, Color.red);
 

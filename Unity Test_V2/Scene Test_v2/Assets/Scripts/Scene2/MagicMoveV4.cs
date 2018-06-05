@@ -166,7 +166,7 @@ public class MagicMoveV4 : MonoBehaviour
 
                     dist = Vector3.Distance(target, player.transform.position);
 
-                    if (dist <= 10f)
+                    if (dist <= 10f || (dist <= 30f && hit.collider.tag == "Bacteria Bighead"))
                     {
                         speed = 0f;
                     }
