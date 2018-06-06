@@ -5,6 +5,8 @@ using cakeslice;
 
 public class SelectionHighlight : MonoBehaviour {
 
+    Collider col;
+
     private SteamVR_TrackedObject trackedObj;
     private SteamVR_Controller.Device Controller
     {
@@ -19,10 +21,7 @@ public class SelectionHighlight : MonoBehaviour {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
         
     }
-    // Use this for initialization
-    void Start () {
-        
-	}
+    
 	
 	// Update is called once per frame
 	void Update () {
@@ -37,7 +36,7 @@ public class SelectionHighlight : MonoBehaviour {
                 
                 if (hit.collider.tag == "Highlightable")
                 {
-
+                    col = hit.collider;
                     _outline = hit.collider.gameObject.GetComponent<Outline>();
                     _outline.isHit = true;
 
@@ -47,17 +46,23 @@ public class SelectionHighlight : MonoBehaviour {
             }
             else
             {
-                
-                _outline.isHit = false;
+                if(hit.collider != null)
+                {
+                    _outline.isHit = false;
 
-                Debug.Log("Highlightable NOT hit!");
+                }
+
+                //Debug.Log("Highlightable NOT hit!");
             }
 
         }
         else
         {
-   
+            if(col != null)
+            {
                 _outline.isHit = false;
+            }
+               
     
         }
 

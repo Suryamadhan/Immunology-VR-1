@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scene Test_v2", "Scene Test_v2.csproj", "{7B12A50B-6975-3C10-1EC7-6A066A6D6EDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scene Test_v2.Plugins", "Scene Test_v2.Plugins.csproj", "{8D0AE953-FBC9-9B1A-6CD2-8DC6B5AF1985}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scene Test_v2.Editor", "Scene Test_v2.Editor.csproj", "{1D25CE34-9D8B-9639-72CF-34A43E1D8D8A}"
 EndProject
 Global
@@ -15,6 +17,10 @@ Global
 		{7B12A50B-6975-3C10-1EC7-6A066A6D6EDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B12A50B-6975-3C10-1EC7-6A066A6D6EDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B12A50B-6975-3C10-1EC7-6A066A6D6EDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D0AE953-FBC9-9B1A-6CD2-8DC6B5AF1985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D0AE953-FBC9-9B1A-6CD2-8DC6B5AF1985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D0AE953-FBC9-9B1A-6CD2-8DC6B5AF1985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D0AE953-FBC9-9B1A-6CD2-8DC6B5AF1985}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1D25CE34-9D8B-9639-72CF-34A43E1D8D8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1D25CE34-9D8B-9639-72CF-34A43E1D8D8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D25CE34-9D8B-9639-72CF-34A43E1D8D8A}.Release|Any CPU.ActiveCfg = Release|Any CPU

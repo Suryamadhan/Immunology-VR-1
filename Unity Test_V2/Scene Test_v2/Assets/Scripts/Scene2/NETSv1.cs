@@ -33,7 +33,10 @@ public class NETSv1 : MonoBehaviour
     private Teleportation teleportScript;
     private SelfDestructionCountdown selfDestructScript;
 
+    //stop player movement after NETS triggered
     public MagicMoveV4 magicMoveV4;
+    public GameObject pointerSphere;
+    SphereCollider col;
 
     //vive controller tracking and input
     public SteamVR_TrackedObject controller;
@@ -67,6 +70,8 @@ public class NETSv1 : MonoBehaviour
 
         dnaChain1b.SetActive(false);
         dnaChain2b.SetActive(false);
+
+        col = pointerSphere.GetComponent<SphereCollider>();
     }
 
  
@@ -97,7 +102,8 @@ public class NETSv1 : MonoBehaviour
             header.text = "[Alert]";
 
             teleportScript.enabled = true;
-            magicMoveV4.speed = 0f;
+            //magicMoveV4.speed = 0f;
+            col.enabled = false;
         }
 
     }
@@ -127,6 +133,8 @@ public class NETSv1 : MonoBehaviour
 
         selfDestructScript.m_leftTime = 60f;
 
-        magicMoveV4.speed = 0.2f;
+        //magicMoveV4.speed = 0.2f;
+        col.enabled = true;
+
     }
 }

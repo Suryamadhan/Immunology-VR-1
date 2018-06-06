@@ -251,7 +251,7 @@ public class WeaponShift : MonoBehaviour
     {
         errorAudio.PlayOneShot(error, 2f);
         weaponText.color = Color.red;
-        weaponText.text = "Please kill 1 bacterium with degranulation to unlock this weapon.";
+        weaponText.text = "Please kill 2 bacterium with degranulation to unlock this weapon.";
         header.text = "";
         header.color = Color.red;
 
