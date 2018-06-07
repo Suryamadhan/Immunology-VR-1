@@ -79,8 +79,7 @@ public class NETSv1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        
+  
         if (device.GetHairTrigger())
         {
             dnaChainTemp1.SetActive(true);
@@ -102,7 +101,8 @@ public class NETSv1 : MonoBehaviour
             header.text = "[Alert]";
 
             teleportScript.enabled = true;
-            //magicMoveV4.speed = 0f;
+
+            //disable movement on right controller
             col.enabled = false;
         }
 
@@ -133,7 +133,7 @@ public class NETSv1 : MonoBehaviour
 
         selfDestructScript.m_leftTime = 60f;
 
-        //magicMoveV4.speed = 0.2f;
+        //enable movement on right controller
         col.enabled = true;
 
     }

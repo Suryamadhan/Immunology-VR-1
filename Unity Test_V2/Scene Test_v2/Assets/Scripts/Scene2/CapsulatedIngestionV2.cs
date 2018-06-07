@@ -99,7 +99,6 @@ public class CapsulatedIngestionV2 : MonoBehaviour
             selectionLine.SetPosition(0, controller.transform.position);
             selectionLine.SetPosition(1, lineEnd);
 
-
             RaycastHit hit;
             if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, 35f))
             {
@@ -134,7 +133,7 @@ public class CapsulatedIngestionV2 : MonoBehaviour
 
                     StartCoroutine(WrongTargetWarning());
                 }
-                else
+                /*else
                 {
                     invalidIngestWarning.color = new Color32(255, 255, 255, 255);
                     invalidIngestWarning.text = "Phagocytosis in action!";
@@ -142,7 +141,7 @@ public class CapsulatedIngestionV2 : MonoBehaviour
                     header.text = "[status]";
                     isWrongTarget = false;
                 }
-
+                */
             }
             else
             {

@@ -16,7 +16,6 @@ public class MagicMoveV4 : MonoBehaviour
 
     private Vector2 touchPad;
 
-
     public float beamLength=120f;
     public GameObject pointerHead;
     private CollisionDetection _colDetect;
@@ -30,7 +29,7 @@ public class MagicMoveV4 : MonoBehaviour
     private Vector3 target;
     public bool isMoving;
     public GameObject lineR; // create a reference to linerenderer on an empty gameobject in right controller
-    //private BoxCollider boxCol; // box collider on the linerenderer
+   
 
     //create a list of hitpoints
     private List<Vector3> hitPoints = new List<Vector3>();
@@ -64,7 +63,7 @@ public class MagicMoveV4 : MonoBehaviour
         controller = GetComponent<SteamVR_TrackedObject>();
         sphere.SetActive(false);
         pointerHead.SetActive(false);
-        //boxCol = lineR.GetComponent<BoxCollider>();
+
         _colDetect = pointerHead.GetComponent<CollisionDetection>();
         speedReset = speed;
         
