@@ -221,6 +221,7 @@
     <Compile Include="Assets\Scripts\Scene1\TimerCountdown.cs" />
     <Compile Include="Assets\Scripts\Scene1\TimerCountdownSeconds.cs" />
     <Compile Include="Assets\Scripts\Scene1\TouchpadMove.cs" />
+    <Compile Include="Assets\Scripts\Scene1\TouchpadMoveV2.cs" />
     <Compile Include="Assets\Scripts\Scene1\TouchpadRotation.cs" />
     <Compile Include="Assets\Scripts\Scene1\ViveControllerInputTest.cs" />
     <Compile Include="Assets\Scripts\Scene1\ViveControllerLookModule.cs" />
