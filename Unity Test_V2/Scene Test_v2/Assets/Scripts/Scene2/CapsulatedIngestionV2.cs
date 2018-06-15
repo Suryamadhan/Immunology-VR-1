@@ -130,7 +130,6 @@ public class CapsulatedIngestionV2 : MonoBehaviour
                 if ((hit.collider.tag == "Bacteria Sausage" && !isWrongTarget)|| (hit.collider.tag == "Bacteria Bighead" && !isWrongTarget))
                 {
                     isWrongTarget = true;
-
                     StartCoroutine(WrongTargetWarning());
                 }
                 /*else
